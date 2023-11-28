@@ -2,5 +2,5 @@
 def magic_string(n):
     result = ""
     for i in range(n + 1):
-        result += "BestSchool"
-    return result
+        result += ", BestSchool"
+    return result+"$"
