@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 class LockedClass:
-    def __setattr__(self, name, value):
-        if name == 'first_name':
-            # Allow setting the 'first_name' attribute
-            self.__dict__[name] = value
-        else:
-            raise AttributeError(f"'{self.__class__.__name__}' object has no attribute '{name}'")
+    """A locked class that only lets the user dynamically create the instance
+    attribute 'first_name'"""
+    __slots__ = ["first_name"]
+
+    def __init__(self, first_name=""):
+        self.first_name = first_name
